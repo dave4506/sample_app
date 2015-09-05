@@ -11,9 +11,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                email: "user@invalid",
                                password:              "foo",
                                password_confirmation: "bar" }
+      end
+      assert_template 'users/new'
     end
-    assert_template 'users/new'
-  end
 
   test "valid signup information" do
     get signup_path
@@ -25,5 +25,5 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/show'
   end
-  
+
 end
